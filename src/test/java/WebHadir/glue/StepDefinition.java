@@ -12,6 +12,7 @@ import com.relevantcodes.extentreports.LogStatus;
 import WebHadir.config.AutomationFrameworkConfiguration;
 import WebHadir.driver.DriverSingleton;
 import WebHadir.pages.Login;
+import WebHadir.pages.ManagePosisi;
 import WebHadir.pages.ReportingKaryawan;
 import WebHadir.utils.ConfigurationProperties;
 import WebHadir.utils.Constants;
@@ -31,6 +32,7 @@ public class StepDefinition {
 	private WebDriver driver;
 	private Login login;
 	private ReportingKaryawan reportingKaryawan;
+	private ManagePosisi managePosisi;
 	ExtentTest extentTest;
 	static ExtentReports report = new ExtentReports("src/main/resources/Report.html");
 	
@@ -42,6 +44,7 @@ public class StepDefinition {
 		DriverSingleton.getInstance(configurationProperties.getBrowser());
 		login = new Login();
 		reportingKaryawan = new ReportingKaryawan();
+		managePosisi = new ManagePosisi();
 		TestCases[] tests = TestCases.values();
 		extentTest = report.startTest(tests[Utils.testCount].getTestName());
 		Utils.testCount++;
@@ -124,6 +127,55 @@ public class StepDefinition {
 		reportingKaryawan.searchByName(configurationProperties.getInLeader());
 		extentTest.log(LogStatus.PASS, "User input leader in form search and click button search");
 	}
+	
+	///////////// MANAGE POSISI /////////////////////
+	
+	@Given("User go to manage position page")
+	public void user_go_to_manage_position_page() throws InterruptedException{
+		managePosisi.gotoManagePosisi();
+		extentTest.log(LogStatus.PASS, "User go to manage position page");
+	}
+	
+	@When("User click tambah button in position page")
+	public void user_click_tambah_button_in_position_page() {
+		managePosisi.clickTambah();
+		extentTest.log(LogStatus.PASS, "User click tambah button in position page");
+	}
+	
+	@And("User input new name position")
+	public void user_input_new_name_position_and_submit() throws InterruptedException {
+		managePosisi.inputPosisi(configurationProperties.getInPosisi());
+		extentTest.log(LogStatus.PASS, "User input new name position and submit");
+	}
+	
+	@When("User click ubah data button in position page")
+	public void user_click_ubah_data_button_in_position_page() throws InterruptedException {
+		managePosisi.clickEdit();
+		extentTest.log(LogStatus.PASS, "User click tambah button in position page");
+	}
+	
+	@And("User input edited data in position page and submit")
+	public void user_input_edited_data_in_position_page_and_submit() throws InterruptedException {
+		managePosisi.editPosisi(configurationProperties.getEditPosisi());
+		extentTest.log(LogStatus.PASS, "User input edited data in position page and submit");
+	}
+	
+	@When("User click hapus data button in position page")
+	public void user_click_hapus_data_button_in_position_page() {
+		managePosisi.removePosisi();
+		extentTest.log(LogStatus.PASS, "User click hapus data button in position page");
+	}
+	
+	
+	///////////// MANAGE SETTING /////////////////////
+	
+	
+	
+		
+	///////////// MANAGE DEPARTEMEN /////////////////////
+	
+	
+	
 	
 	
 	@After

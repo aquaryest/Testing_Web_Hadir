@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import WebHadir.driver.DriverSingleton;
-import WebHadir.utils.Utils;
 
 public class ReportingKaryawan {
 

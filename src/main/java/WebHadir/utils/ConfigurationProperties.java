@@ -25,6 +25,24 @@ public class ConfigurationProperties {
 	
 	@Value("${inputLeader}")
 	private String inLeader;
+	
+	@Value("${inputPosisi}")
+	private String inPosisi;
+	
+	@Value("${editPosisi}")
+	private String editPosisi;
+	
+	@Value("${inputTimer}")
+	private String inTimer;
+	
+	@Value("${inputRadius")
+	private String inRadius;
+	
+	@Value("${inputDepartemen}")
+	private String inDepartemen;
+	
+	@Value("${editDepartemen}")
+	private String editDepartemen;
 
 	
 	public String getInLeader() {
@@ -51,5 +69,52 @@ public class ConfigurationProperties {
 		return browser;
 	}
 
-	
+	public String getInPosisi() {
+		return inPosisi;
+	}
+
+	public void setInPosisi(String inPosisi) {
+		this.inPosisi = inPosisi;
+	}
+
+	public String getEditPosisi() {
+		return editPosisi;
+	}
+
+	public void setEditPosisi(String editPosisi) {
+		this.editPosisi = editPosisi;
+	}
+
+	public String getInTimer() {
+		return inTimer;
+	}
+
+	public void setInTimer(String inTimer) {
+		this.inTimer = inTimer;
+	}
+
+	public String getInRadius() {
+		return inRadius;
+	}
+
+	public void setInRadius(String inRadius) {
+		this.inRadius = inRadius;
+	}
+
+	public String getInDepartemen() {
+		return inDepartemen;
+	}
+
+	public void setInDepartemen(String inDepartemen) {
+		this.inDepartemen = inDepartemen;
+	}
+
+	public String getEditDepartemen() {
+		return editDepartemen;
+	}
+
+	public void setEditDepartemen(String editDepartemen) {
+		this.editDepartemen = editDepartemen;
+	}
+		
 }

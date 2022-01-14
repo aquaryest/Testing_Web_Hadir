@@ -11,4 +11,3 @@ Feature: Reporting Karyawan
 		When User click dropdown list for Leader
 		And User click list leader
 		And User input leader in form search and click button search
-		
